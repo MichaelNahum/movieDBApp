@@ -26,3 +26,7 @@ function getPosts() {
     document.getElementById('output').innerHTML = output;
     })
 }
+
+function testing() {
+  console.log("herro world")
+}
