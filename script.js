@@ -1,5 +1,3 @@
-document.getElementById('getMovies').addEventListener('click', getMovies);
-
 let baseURL = 'https://api.themoviedb.org/3/';
 let APIKEY  = '56b548ffac684aba0fcfddb46a52bba5';
 
@@ -9,6 +7,8 @@ let getMovies = function (movieName) {
     .then((result)=>{ result.json()})
     .then((data)=>{ console.log(data) })
 }
+
+document.getElementById('getMovies').addEventListener('click', getMovies);
 
 function getPosts() { 
     fetch('https://api.themoviedb.org/3/search/movie?api_key=56b548ffac684aba0fcfddb46a52bba5')
