@@ -38,6 +38,18 @@ function getPosts() {
     })
 }
 
-function testing() {
-  console.log("herro world")
+
+//title
+for(let i=0; i< results.results.length; i++){ 
+  console.log(results.results[i].title)
+}
+
+//summary
+for(let i=0; i< results.results.length; i++){ 
+  console.log(results.results[i].overview)
+}
+
+//year
+for(let i=0; i< results.results.length; i++){ 
+  console.log(results.results[i].release_date.slice(0,4))
 }
