@@ -1,16 +1,22 @@
 let baseURL = 'https://api.themoviedb.org/3/';
 let APIKEY  = '56b548ffac684aba0fcfddb46a52bba5';
-let searchTerm = document.getElementById('title').value;
 
-let getMovies = function (searchTerm) {
-    console.log(searchTerm);
-    let url = "".concat(baseURL, 'search/movie?api_key=', APIKEY, '&query=', searchTerm); 
+let getMovies = function () {
+  let searchTerm = document.getElementById('title').value;
+  let url = "".concat(baseURL, 'search/movie?api_key=', APIKEY, '&query=', searchTerm); 
     fetch(url)
     .then((result)=>result.json())
-    .then((data)=>console.log(data) )
+    .then((data)=> console.log(data) )
 }
 
+// document.getElementById('output').innerHTML = JSON.stringify(data, null, 4)
+
 document.getElementById('getMovies').addEventListener('click', getMovies);
+document.getElementById('getMovies').addEventListener('keypress', function(e){ 
+  if (e.key === 'Enter') {
+    getMovies()
+  }
+});
 
 function getPosts() { 
     fetch('https://api.themoviedb.org/3/search/movie?api_key=56b548ffac684aba0fcfddb46a52bba5')
