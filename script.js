@@ -1,8 +1,10 @@
 let baseURL = 'https://api.themoviedb.org/3/';
 let APIKEY  = '56b548ffac684aba0fcfddb46a52bba5';
+let searchTerm = document.getElementById('title').value;
 
-let getMovies = function () {
-    let url = "".concat(baseURL, 'search/movie?api_key=', APIKEY, '&query=', 'Jack Reacher'); 
+let getMovies = function (searchTerm) {
+    console.log(searchTerm);
+    let url = "".concat(baseURL, 'search/movie?api_key=', APIKEY, '&query=', searchTerm); 
     fetch(url)
     .then((result)=>result.json())
     .then((data)=>console.log(data) )
