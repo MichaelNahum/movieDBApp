@@ -38,8 +38,21 @@ function getPosts() {
     })
 }
 
+function getImages() {
+  let url = "".concat(baseURL, 'configuration?api_key=', APIKEY); 
+    fetch(url)
+    .then((result)=>{
+      return result.json();
+    })
+    .then((data)=>{
+      baseImageURL = data.images.secure_base_url;
+      configData = data.images;
+      console.log('config:', data);
+})}
 
-//title
+// "https://image.tmdb.org/t/p/"
+
+/*title
 for(let i=0; i< results.results.length; i++){ 
   console.log(results.results[i].title)
 }
@@ -52,4 +65,4 @@ for(let i=0; i< results.results.length; i++){
 //year
 for(let i=0; i< results.results.length; i++){ 
   console.log(results.results[i].release_date.slice(0,4))
-}
+}*/
